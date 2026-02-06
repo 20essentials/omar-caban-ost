@@ -73,7 +73,7 @@ body {
 .am-modal {
   margin: auto;
   border: none;
-  min-width: 250px;
+  width: 100%;
   max-width: 275px;
   height: max-content;
   padding: 1rem;
@@ -126,11 +126,50 @@ body {
     }
   }
 
+  .nav-of-options-of-the-modal {
+    width: 100%;
+    height: 24px;
+    display: flex;
+    padding: 3px;
+    gap: 6px;
+    padding-block: 2px;
+
+    .am-button-nav-modal {
+      width: 20%;
+      height: 100%;
+      margin: 0;
+      border-radius: 4px;
+      border: 0;
+      display: flex;
+      flex-wrap: wrap;
+      place-content: center;
+      background-color: #e9e9e9;
+
+      &.button-nav-selected {
+        background-color: #333;
+
+        svg {
+          color: #fff;
+          
+        }
+      }
+
+      svg {
+        width: 100%;
+        height: 90%;
+        pointer-events: none;
+        transform: scale(0.9);
+      }
+    }
+  }
+
   .container-modal {
     display: flex;
     flex-direction: column;
     margin-top: 0.5rem;
-    height: 100px;
+    min-height: 90px;
+    height: 100%;
+    max-height: 300px;
     padding-bottom: 0.9rem;
     scroll-behavior: smooth;
     scrollbar-gutter: both-edges;
@@ -138,6 +177,10 @@ body {
     scrollbar-width: thin;
     scrollbar-color: white transparent;
     overscroll-behavior: contain;
+
+    @media (width <= 1111px) and (orientation: landscape) {
+      max-height: 150px;
+    }
 
     .fila {
       display: flex;
@@ -325,7 +368,7 @@ body {
 
   img {
     inline-size: fit-content;
-    block-size: 3rem;
+    block-size: 2.5rem;
   }
 }
 
@@ -397,7 +440,7 @@ body {
   .nav-list-momentary {
     position: relative;
 
-    .uiverse {
+    .btn-tooltip {
       --duration: 7s;
       --easing: linear;
       --c-color-1: rgba(26, 163, 255, 0.7);
@@ -476,7 +519,7 @@ body {
       }
     }
 
-    .uiverse:before {
+    .btn-tooltip:before {
       content: '';
       pointer-events: none;
       position: absolute;
@@ -490,7 +533,7 @@ body {
         inset 0 -3px 4px var(--c-shadow-inset-bottom);
     }
 
-    .uiverse .wrapper {
+    .btn-tooltip .wrapper {
       mask-image: radial-gradient(white, black);
       overflow: hidden;
       border-radius: 24px;
@@ -502,13 +545,13 @@ body {
       width: 100%;
     }
 
-    .uiverse .wrapper span {
+    .btn-tooltip .wrapper span {
       display: inline-block;
       position: relative;
       z-index: 200;
     }
 
-    .uiverse .wrapper .circle {
+    .btn-tooltip .wrapper .circle {
       position: absolute;
       left: 0;
       top: 0;
@@ -522,100 +565,100 @@ body {
         infinite;
     }
 
-    .uiverse .wrapper .circle.circle-1,
-    .uiverse .wrapper .circle.circle-9,
-    .uiverse .wrapper .circle.circle-10 {
+    .btn-tooltip .wrapper .circle.circle-1,
+    .btn-tooltip .wrapper .circle.circle-9,
+    .btn-tooltip .wrapper .circle.circle-10 {
       --background: var(--c-color-4);
     }
 
-    .uiverse .wrapper .circle.circle-3,
-    .uiverse .wrapper .circle.circle-4 {
+    .btn-tooltip .wrapper .circle.circle-3,
+    .btn-tooltip .wrapper .circle.circle-4 {
       --background: var(--c-color-2);
       --blur: 14px;
     }
 
-    .uiverse .wrapper .circle.circle-5,
-    .uiverse .wrapper .circle.circle-6 {
+    .btn-tooltip .wrapper .circle.circle-5,
+    .btn-tooltip .wrapper .circle.circle-6 {
       --background: var(--c-color-3);
       --blur: 16px;
     }
 
-    .uiverse .wrapper .circle.circle-2,
-    .uiverse .wrapper .circle.circle-7,
-    .uiverse .wrapper .circle.circle-8,
-    .uiverse .wrapper .circle.circle-11,
-    .uiverse .wrapper .circle.circle-12 {
+    .btn-tooltip .wrapper .circle.circle-2,
+    .btn-tooltip .wrapper .circle.circle-7,
+    .btn-tooltip .wrapper .circle.circle-8,
+    .btn-tooltip .wrapper .circle.circle-11,
+    .btn-tooltip .wrapper .circle.circle-12 {
       --background: var(--c-color-1);
       --blur: 12px;
     }
 
-    .uiverse .wrapper .circle.circle-1 {
+    .btn-tooltip .wrapper .circle.circle-1 {
       --x: 50px;
       --y: -40px;
       --animation: circle-1;
     }
 
-    .uiverse .wrapper .circle.circle-2 {
+    .btn-tooltip .wrapper .circle.circle-2 {
       --x: 180px;
       --y: 8px;
       --animation: circle-2;
     }
 
-    .uiverse .wrapper .circle.circle-3 {
+    .btn-tooltip .wrapper .circle.circle-3 {
       --x: 200px;
       --y: -12px;
       --animation: circle-3;
     }
 
-    .uiverse .wrapper .circle.circle-4 {
+    .btn-tooltip .wrapper .circle.circle-4 {
       --x: 80px;
       --y: -12px;
       --animation: circle-4;
     }
 
-    .uiverse .wrapper .circle.circle-5 {
+    .btn-tooltip .wrapper .circle.circle-5 {
       --x: 12px;
       --y: -4px;
       --animation: circle-5;
     }
 
-    .uiverse .wrapper .circle.circle-6 {
+    .btn-tooltip .wrapper .circle.circle-6 {
       --x: 120px;
       --y: 16px;
       --animation: circle-6;
     }
 
-    .uiverse .wrapper .circle.circle-7 {
+    .btn-tooltip .wrapper .circle.circle-7 {
       --x: 180px;
       --y: 28px;
       --animation: circle-7;
     }
 
-    .uiverse .wrapper .circle.circle-8 {
+    .btn-tooltip .wrapper .circle.circle-8 {
       --x: 200px;
       --y: -4px;
       --animation: circle-8;
     }
 
-    .uiverse .wrapper .circle.circle-9 {
+    .btn-tooltip .wrapper .circle.circle-9 {
       --x: 100px;
       --y: -12px;
       --animation: circle-9;
     }
 
-    .uiverse .wrapper .circle.circle-10 {
+    .btn-tooltip .wrapper .circle.circle-10 {
       --x: 150px;
       --y: 16px;
       --animation: circle-10;
     }
 
-    .uiverse .wrapper .circle.circle-11 {
+    .btn-tooltip .wrapper .circle.circle-11 {
       --x: 200px;
       --y: 4px;
       --animation: circle-11;
     }
 
-    .uiverse .wrapper .circle.circle-12 {
+    .btn-tooltip .wrapper .circle.circle-12 {
       --blur: 190px;
       --x: 52px;
       --y: 4px;
@@ -658,6 +701,15 @@ body {
   }
 }
 
+@keyframes moveLuz {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
 main {
   width: 100%;
   max-width: 1600px;
@@ -688,6 +740,7 @@ main {
       background-size: cover;
       aspect-ratio: 1;
       position: relative;
+      overflow: hidden;
       box-shadow: 0 0 10px 0 #0005, inset 0 0 20px 5px #0003;
 
       .input-range {
@@ -698,6 +751,23 @@ main {
         bottom: 3px;
         accent-color: chartreuse;
         display: none;
+      }
+
+  
+      &:hover {
+        &::after {
+          animation: moveLuz 0.5s linear forwards;
+        }
+      }
+  
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: -100%;
+        top: 0;
+        background: linear-gradient(90deg, transparent, #fff2, transparent);
       }
     }
 
